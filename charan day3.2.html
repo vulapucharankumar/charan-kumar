@@ -1,0 +1,42 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>9.25 Lab</title>
+<script type="text/javascript">
+
+var num = Math.random()*(999)+1;
+function Guess()
+{
+var guess = parseInt(document.getElementById("hint").value);
+if (guess < num)
+document.getElementById("guesshint").value= "No, guess higher.";
+if (guess > num)
+document.getElementById("guesshint").value= "No, guess lower.";
+if (guess == num)
+{
+window.alert("Congratulations! You guessed the number");
+}
+}
+}
+</script>
+</head>
+<body>
+<h1> Guess the number</h1>
+<hr />
+
+<p>Press F5 or Refresh to load script again. Guess Number</p>
+<form name = "guessform" action = "">
+<table border = "1">
+<caption>Guess Random Number</caption>
+<tr><td>Input Any Number between 1 and 1000</td>
+<td><input name = "hint" type = "text" />
+</td></tr>
+<tr><td>Hint</td>
+<td><input name = "guesshint" type = "text" disabled="disabled" />
+</td></tr>
+<tr><td><input type = "button" value = "Calculate" onclick= "Guess()"/></td></tr>
+</table>
+</form>
+</body>
+</html>

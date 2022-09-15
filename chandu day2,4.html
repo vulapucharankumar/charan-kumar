@@ -1,0 +1,112 @@
+<html>
+<body> 
+<script>
+while(flag){
+System.out.println("Please Enter exactly 4 digit enteger ");
+beforeIncryption = myScanner.nextInt();
+
+if( beforeIncryption-1000 >= 0 && beforeIncryption-1000
+<= 8999)
+flag=false;
+}
+temp = beforeIncryption;
+
+int v1 , v2 , v3,v4;// v1 contain 1st digit,v2 contain 2nd
+digit and so on...
+
+//take separate digit and apply encryption process
+v4=temp%10;
+v4+=7;
+v4%=10;
+
+temp/=10;
+
+v3=temp%10;
+v3+=7;
+v3%=10;
+
+temp/=10;
+
+v2=temp%10;
+v2+=7;
+v2%=10;
+
+temp/=10;
+
+v1=temp%10;
+v1+=7;
+v1%=10;
+
+//swapping values 1st digit with 3rd digit and 2nd with
+4th....
+temp=v1;
+v1=v3;
+v3=temp;
+
+temp=v2;
+v2=v4;
+v4=temp;
+
+
+incryptValue = v1*1000 + v2*100 + v3*10 + v4*1;// combine
+4 separate digit into 1 number
+System.out.println("Encrypted data is
+"+incryptValue);//display encryption result
+
+
+//Program for decryption........
+
+int myIncrypt;//take encrypted input from user
+System.out.println("Enter encrypted data ");//prompt for user
+myIncrypt=myScanner.nextInt();//take value for apply
+decryption process
+
+int dv1,dv2,dv3,dv4,decryptValue;
+
+//separate 1 four digit number into 4 separate 1 digit number
+dv4=myIncrypt%10;
+myIncrypt/=10;
+
+dv3=myIncrypt%10;
+myIncrypt/=10;
+
+dv2=myIncrypt%10;
+myIncrypt/=10;
+
+dv1=myIncrypt%10;
+myIncrypt/=10;
+
+//swap values
+temp=dv1;
+dv1=dv3;
+dv3=temp;
+
+temp=dv2;
+dv2=dv4;
+dv4=temp;
+
+//apply decryption process
+dv1+=10;
+dv1-=7;
+dv1%=10;
+
+dv2+=10;
+dv2-=7;
+dv2%=10;
+
+dv3+=10;
+dv3-=7;
+dv3%=10;
+
+dv4+=10;
+dv4-=7;
+dv4%=10;
+
+//combine result
+decryptValue=dv1*1000+dv2*100+dv3*10+dv4*1;
+//display result
+System.out.println("decrypted data is"+decryptValue);
+
+}
+
+}
